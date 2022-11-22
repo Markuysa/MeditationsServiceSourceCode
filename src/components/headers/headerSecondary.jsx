@@ -14,7 +14,7 @@ const HeaderSecondary = ()=>{
     let accountMenu;
     let accountIcon;
     useEffect(() => {
-        let burgerButton = document.querySelector('.burgerButtonStyles_burger__icon__9diuz')    
+        let burgerButton = document.querySelector('.secondaryBurger')    
         let menu = document.querySelector('.header-secondary__navigation__list_hidden')
         const onBurgerClick = ()=>{
             menu.style.transform="translateY(0)"
