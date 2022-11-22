@@ -55,7 +55,7 @@
   padding-left: 0px;
 }
 
-@media only screen and (max-width: 925px) {
+@media screen and (max-width: 925px) {
   .meditation-card-wrapper {
     width: 50%;
   }
@@ -63,7 +63,7 @@
     transform: translateX(100px);
   }
 }
-@media only screen and (max-width: 625px) {
+@media screen and (max-width: 625px) {
   .meditation-card-wrapper {
     width: 100%;
   }

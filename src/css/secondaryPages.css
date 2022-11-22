@@ -127,3 +127,42 @@
     font-size: 16px;
   }
 }
+@media screen and (max-height: 620px) {
+  .main-wrapper .first_page .main__firstPage .firstPage__title .firstPage_title_descriprion {
+    font-size: 46px;
+  }
+  .page-wrapper .page-wrapper__content {
+    display: flex;
+    flex-direction: column;
+  }
+  .page-wrapper .page-wrapper__content .page-wrapper-content__image {
+    position: absolute;
+    left: 0;
+    width: 80%;
+    height: 80%;
+    z-index: 10;
+    filter: blur(4px) brightness(0.9) drop-shadow(100px 100px rgba(0, 0, 0, 0.068));
+  }
+  .page-wrapper .page-wrapper__content .page-wrapper-content__numberImage {
+    filter: blur(1px) brightness(0.9) drop-shadow(100px 100px rgba(0, 0, 0, 0.068));
+  }
+  .page-wrapper .page-wrapper__content .textContentPage {
+    z-index: 10000;
+  }
+  .page-wrapper .page-wrapper__content .textContentPage .text__header_top {
+    color: #ac9445;
+  }
+  .page-wrapper .page-wrapper__content .textContentPage .text__header_title {
+    font-size: 50px;
+  }
+  .page-wrapper .page-wrapper__content .textContentPage .text__header_description {
+    font-size: 16px;
+  }
+}
+@media screen and (max-height: 450px) {
+  .page-wrapper .page-wrapper__content .page-wrapper-content__image {
+    width: 70%;
+    height: 70%;
+    margin-top: 15%;
+  }
+}

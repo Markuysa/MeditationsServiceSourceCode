@@ -42,10 +42,10 @@
   height: 103%;
   border: 1px solid black;
   position: absolute;
+  transition: 1s;
 }
 .meditationPage-wrapper .meditationPage-wrapper__content .content__meditation_block .meditation_block__textContent:hover:before {
   transform: translate(-10px, -20px);
-  transition: 1s;
 }
 .meditationPage-wrapper .meditationPage-wrapper__content .content__meditation_block .meditation_block__textContent .textContent__title {
   margin-top: 10px;

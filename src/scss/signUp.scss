@@ -41,7 +41,7 @@
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
-            margin-top:10px;
+            
             margin: 10px;
             a{
                 color: black;
@@ -149,6 +149,31 @@
                     padding: 5px;   
                 }
             }
+        }
+    }
+}
+
+@media screen and (max-height: 420px){
+    .login-wrapper{ 
+        margin-bottom: 5px;        
+        .login-container{
+
+            h1{
+                font-size: 25px;
+                
+            }
+            .form__inputFields{
+                input{
+                    height: 30px;
+                }
+            }
+            .form__buttonsBlock{
+                margin-top:0px;
+                button{
+                    padding: 3px;   
+                }
+            }
+            
         }
     }
 }

@@ -38,13 +38,12 @@
                     height: 103%;
                     border: 1px solid black;
                     position: absolute;
+                    transition: 1s;
 
                 }
                 &:hover{
                     &:before{
                         transform: translate(-10px,-20px);
-                        transition: 1s;
-                        
                     }
                 }
                 .textContent__title{

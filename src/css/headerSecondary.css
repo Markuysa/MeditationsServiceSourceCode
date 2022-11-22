@@ -163,7 +163,11 @@
   transform: scale(1.1);
   transition: 0.2s;
 }
-@media only screen and (max-width: 625px) {
+@media only screen and (max-width: 843px) {
+  .header-secondary__navigation__list {
+    visibility: collapse;
+    opacity: 0;
+  }
   .eader-secondary__navigation {
     display: none;
   }
@@ -178,7 +182,7 @@
     transform: translateX(20px);
   }
 }
-@media screen and (min-width: 626px) {
+@media screen and (min-width: 844px) {
   .header-secondary__wrapper .header-secondary__navigation__list_hidden {
     display: none;
   }
