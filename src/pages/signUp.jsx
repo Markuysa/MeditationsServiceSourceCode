@@ -1,4 +1,4 @@
-import '../css/login_page.css'
+import '../css/signUp.css'
 import Button from '../UI/Blackbutton/BlackButton';
 import InputField from '../UI/InputField/InputFiels';
 import InputFieldForm from '../UI/InputFieldForm/InputFieldForm';
@@ -16,7 +16,7 @@ const SignUp = () =>{
                 <h1>Welcome </h1>
                 <form action="post" className="form">
                     <div className="form__inputFields">
-                        <section>
+                    /.    <section>
                             <label htmlFor="email">Email</label> 
                             <InputFieldForm type="text" name='email' placeholder="Email"/>
                         </section>
@@ -28,10 +28,6 @@ const SignUp = () =>{
                         <section>
                             <label htmlFor="name">Name</label> 
                             <InputFieldForm type="text" name='name' placeholder="Name"/>
-                        </section>
-                        <section>
-                            <label htmlFor="dob">Day of birth</label> 
-                            <InputFieldForm type="date" name='dob' placeholder="Day ob birth"/>
                         </section>
                         <div className="form__additionalFeatures">
 
