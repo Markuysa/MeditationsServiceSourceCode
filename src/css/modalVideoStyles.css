@@ -75,6 +75,22 @@
   width: 100%;
 }
 
+@media screen and (max-width: 1000px) {
+  .popup__close {
+    color: white;
+    font-size: 36px;
+  }
+  .popup__body {
+    padding: 0 5px 0 5px;
+  }
+  .popup__content {
+    background-color: transparent;
+    width: 100%;
+  }
+  .popup__content iframe {
+    height: 300px;
+  }
+}
 @media screen and (max-width: 600px) {
   .popup__content {
     padding: 0;
