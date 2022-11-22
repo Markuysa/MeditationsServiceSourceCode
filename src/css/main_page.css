@@ -1,0 +1,67 @@
+@import url("../css/resetFile.css");
+@import url("../css/fonts.css");
+.main-wrapper {
+  overflow: hidden;
+}
+.main-wrapper .first_page {
+  scroll-snap-align: start;
+  background: url("../img/meditation_image.png") no-repeat center center fixed;
+  background-position: 0;
+  background-size: cover;
+}
+.main-wrapper .first_page .main__firstPage {
+  height: 100vh;
+}
+.main-wrapper .first_page .main__firstPage .firstPage__title {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+}
+.main-wrapper .first_page .main__firstPage .firstPage__title .firstPage_title__header {
+  font-family: "Gilroy Light";
+  color: #f7cd6c;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.main-wrapper .first_page .main__firstPage .firstPage__title .firstPage_title__header .title__header_rect {
+  background-image: url("../img/Rectangle 2.1.png");
+  filter: brightness(1.1);
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 100px;
+}
+.main-wrapper .first_page .main__firstPage .firstPage__title .firstPage_title_descriprion {
+  font-size: 60px;
+  font-family: "Chronicle Display Semibold", "Times New Roman";
+  color: white;
+}
+.main-wrapper .first_page .main__firstPage .firstPage__title .firstPage_title_scrollButton {
+  transform: translateY(5vh);
+}
+.main-wrapper .first_page .main__firstPage .firstPage__title .firstPage_title_scrollButton button {
+  background-color: transparent;
+}
+.main-wrapper .first_page .main__firstPage .firstPage__title .firstPage_title_scrollButton .title__scrollButton {
+  font-family: "Gilroy Light";
+  background-image: url("../img/arrow_downward_24px.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  font-size: 18px;
+  padding-right: 25px;
+  color: white;
+}
+.main-wrapper .second_landing, .main-wrapper .third_landing, .main-wrapper .fourth_landing {
+  height: 100vh;
+  background: #759B80;
+  width: 100%;
+  overflow: hidden;
+}
+.main-wrapper .third_landing, .main-wrapper .fourth_landing {
+  z-index: -1;
+}
+
+@media screen and (max-width: 810px) {
+  .firstPage_title_descriprion {
+    font-size: 12px;
+  }
+}

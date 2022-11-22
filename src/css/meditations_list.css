@@ -1,0 +1,57 @@
+@import url("../css/resetFile.css");
+@import url("../css/fonts.css");
+.meditations_list_content {
+  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  width: 100%;
+}
+
+.meditations_list_cards .search_fields {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  position: relative;
+}
+.meditations_list_cards .search_fields .filter_fields__select {
+  margin-left: 10px;
+}
+.meditations_list_cards .search_fields .search_fields__select {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.meditations_list_cards .notFoundPage {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.meditations_list_cards .notFoundPage p {
+  margin-bottom: 100px;
+  font-family: "Gilroy Light";
+  color: black;
+  font-size: 64px;
+  text-align: center;
+}
+
+@media screen and (max-width: 625px) {
+  .meditation_page__content {
+    margin: 0;
+    display: none;
+  }
+  .meditations_list_cards .search_fields {
+    flex-direction: column;
+  }
+  .meditations_list_cards .search_fields .filter_fields__select {
+    margin-right: 20px;
+    margin-left: 10px;
+    display: block;
+  }
+  .meditations_list_cards .search_fields .search_fields__search {
+    margin-right: 20px;
+    margin-bottom: 10px;
+  }
+}

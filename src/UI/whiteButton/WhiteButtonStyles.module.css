@@ -1,0 +1,24 @@
+@import url("../../css/fonts.css");
+.whiteButton{
+    width: fit-content;
+    background-color: white;
+    font-family: 'Gilroy Light';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    cursor: pointer;
+    padding: 6px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #333333;
+    border:2px solid black;
+    z-index: 100;
+    
+}
+.whiteButton:hover{
+    background-color: black;
+    color: white;
+    transition: .8s;
+}

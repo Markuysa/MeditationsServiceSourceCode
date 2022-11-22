@@ -1,0 +1,18 @@
+@import url("../../css/fonts.css");
+.button{
+    width: 100%;
+    background-color: black;
+    color:white;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 8px;
+    font-family: "Gilroy Light";
+
+
+}
+/* .button:hover{
+    background-color: rgb(243, 223, 181);
+    color:black;
+    transition: .6s;        
+
+} */

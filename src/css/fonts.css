@@ -1,0 +1,28 @@
+@font-face {
+	font-family: 'Chronicle Display Semibold'; 
+	src: url("../fonts/Chronicle\ Display\ Semibold.otf"); 
+}
+@font-face {
+	font-family: 'Gilroy Bold'; 
+	src: url("../fonts/Gilroy-ExtraBold.otf"); 
+}
+@font-face {
+	font-family: 'Gilroy Light'; 
+	src: url("../fonts/Gilroy-Light.otf"); 
+}
+@font-face {
+	font-family: 'Chronicle Display Black'; 
+	src: url("../fonts/Chronicle\ Display\ Black.otf"); 
+}
+@font-face {
+	font-family: 'Inter Medium'; 
+	src: url("../fonts/inter/Inter-Medium.otf"); 
+}
+@font-face {
+	font-family: 'Inter Bold'; 
+	src: url("../fonts/inter/Inter-Bold.otf"); 
+}
+@font-face {
+	font-family: 'Inter Light'; 
+	src: url("../fonts/inter/Inter-Light.otf"); 
+}

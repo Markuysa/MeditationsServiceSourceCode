@@ -1,0 +1,33 @@
+
+.burger__icon{
+    width: 50px;
+    height: fit-content;
+    margin:10px;
+    /* position: absolute;
+    visibility: collapse; */
+}
+.burger__middle_line{
+    width: 50%;
+    height: 3px;
+    background-color: #000;
+    position: relative;
+    border-radius: 8px;
+}
+.burger__middle_line::after{
+    position: absolute;
+    content: '';
+    width: 150%;
+    height: 3px;
+    background-color: #000;
+    bottom: -10px;
+    border-radius: 8px;
+}
+.burger__middle_line::before{
+    position: absolute;
+    content: '';
+    width: 130%;
+    height: 3px;
+    background-color: #000;
+    top: -10px;
+    border-radius: 8px;
+}

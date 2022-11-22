@@ -1,0 +1,26 @@
+
+@import "../../css/fonts.css";
+.search_input__wrapper{
+    max-width: 250px;
+    min-width: 100px;
+    position: relative;
+}
+.search_input__field{
+    padding: 7px;
+    width: 100%;
+    font-family: "Gilroy Ligh";
+    height: 100%;
+}
+.search_input__field{
+    
+}
+.searchFieldIcon{
+    background-image: url("../../img/icons/search.png");
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-color: black;
+    padding: 15px;
+    background-color: red;
+    
+    
+}

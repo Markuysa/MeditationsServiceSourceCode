@@ -1,0 +1,21 @@
+@import url("../../css/fonts.css");
+.button{
+    width: 100%;
+    color:white;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 8px;
+    font-family: "Gilroy Light";
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
+
+
+}
+.icon{
+    background-image: url("../../img/icons/icons8-google-20.png");
+    background-position: left center;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding-left:30px;
+}

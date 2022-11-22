@@ -1,0 +1,239 @@
+@import url("../css/fonts.css");
+#more {
+  display: none;
+}
+
+.meditationPage-wrapper .meditationPage-wrapper__content {
+  margin-top: 60px;
+}
+.meditationPage-wrapper .meditationPage-wrapper__content .footer {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.meditationPage-wrapper .meditationPage-wrapper__content .content__meditation_block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1080px;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.meditationPage-wrapper .meditationPage-wrapper__content .content__meditation_block .meditation_block__textContent {
+  padding: 25px;
+  height: 100%;
+  margin: 10px;
+  width: 50%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgb(104, 102, 102);
+}
+.meditationPage-wrapper .meditationPage-wrapper__content .content__meditation_block .meditation_block__textContent::before {
+  content: "";
+  width: 103%;
+  height: 103%;
+  border: 1px solid black;
+  position: absolute;
+}
+.meditationPage-wrapper .meditationPage-wrapper__content .content__meditation_block .meditation_block__textContent:hover:before {
+  transform: translate(-10px, -20px);
+  transition: 1s;
+}
+.meditationPage-wrapper .meditationPage-wrapper__content .content__meditation_block .meditation_block__textContent .textContent__title {
+  margin-top: 10px;
+  text-align: left;
+  color: black;
+  width: 100%;
+  font-family: "Gilroy Light";
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.meditationPage-wrapper .meditationPage-wrapper__content .content__meditation_block .meditation_block__textContent .textContent__title .textContent__categories {
+  font-family: "Gilroy Light";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: lowercase;
+  color: rgb(79, 78, 78);
+}
+.meditationPage-wrapper .meditationPage-wrapper__content .content__meditation_block .meditation_block__textContent .textContent__buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  z-index: 10000;
+}
+.meditationPage-wrapper .meditationPage-wrapper__content .content__meditation_block .meditation_block__textContent .textContent__buttons .whiteButton, .meditationPage-wrapper .meditationPage-wrapper__content .content__meditation_block .meditation_block__textContent .textContent__buttons .popupButton {
+  margin: 5px;
+}
+.meditationPage-wrapper .meditationPage-wrapper__content .content__meditation_block .meditation_block__textContent .textContent__description {
+  font-family: "Gilroy Light";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+}
+.meditationPage-wrapper .meditationPage-wrapper__content .content__meditation_block .meditation_block__imageSwiper {
+  width: 50%;
+  margin: 10px;
+  height: 100%;
+}
+.meditationPage-wrapper .meditationPage-wrapper__content .content__meditation_block .meditation_block__imageSwiper img {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 5px;
+}
+.meditationPage-wrapper .meditationPage-wrapper__content .meditation_additionalInfo_modalWindow {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(70, 69, 69, 0.827);
+  top: 0;
+  left: 0;
+  color: white;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.8s ease 0s;
+  z-index: 100000;
+}
+.meditationPage-wrapper .meditationPage-wrapper__content .meditation_additionalInfo_modalWindow .closeButton {
+  background: url("../img/icons/closeIcon.svg") center center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.meditationPage-wrapper .meditationPage-wrapper__content .meditation_additionalInfo_modalWindow .modalMeditationWrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
+}
+.meditationPage-wrapper .meditationPage-wrapper__content .meditation_additionalInfo_modalWindow .meditation_additionalInfo__text {
+  margin-left: 50px;
+  text-align: center;
+}
+.meditationPage-wrapper .meditationPage-wrapper__content .meditation_additionalInfo_modalWindow .meditation_additionalnfo__iconsBlock {
+  gap: 20px;
+  margin: 0 auto;
+}
+.meditationPage-wrapper .meditationPage-wrapper__content .meditation_additionalInfo {
+  padding-bottom: 20%;
+  max-width: 920px;
+  max-height: 312px;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.meditationPage-wrapper .meditationPage-wrapper__content .meditation_additionalInfo .hiddenMeditationMore {
+  display: none;
+}
+.meditationPage-wrapper .meditationPage-wrapper__content .meditation_video .meditation_video__source .meditation_frame {
+  min-width: 100em;
+  min-height: 100ex;
+}
+
+.meditation_additionalInfo__text {
+  margin-top: 100px;
+  padding: 50px;
+  padding-top: 0px;
+  padding-left: 0px;
+  max-width: 80%;
+}
+.meditation_additionalInfo__text .additionalInfo_content {
+  font-family: "Gilroy Light";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
+.meditation_additionalnfo__iconsBlock {
+  margin-top: 100px;
+  display: grid;
+  grid-template: repeat(2, 1fr)/repeat(2, 1fr);
+  max-height: 50px;
+  max-width: 20%;
+  gap: auto;
+}
+.meditation_additionalnfo__iconsBlock p {
+  font-family: "Gilroy Light";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+}
+.meditation_additionalnfo__iconsBlock .inconsBlock__icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.meditation_additionalnfo__iconsBlock .inconsBlock__icon img {
+  width: 50px;
+}
+
+@media screen and (max-width: 600px) {
+  .meditation_additionalInfo_modalWindow .modalMeditationWrapper .meditation_additionalnfo__iconsBlock {
+    transform: translateX(-20%);
+  }
+  .meditationPage-wrapper .content__meditation_block .meditation_block__textContent::before {
+    display: none;
+  }
+  .meditationPage-wrapper .meditationPage-wrapper__content .content__meditation_block {
+    flex-direction: column;
+  }
+  .meditationPage-wrapper .meditationPage-wrapper__content .content__meditation_block .meditation_block__textContent {
+    width: 90%;
+  }
+  .meditationPage-wrapper .meditationPage-wrapper__content .content__meditation_block .meditation_block__imageSwiper {
+    width: 90%;
+  }
+  .meditationPage-wrapper .meditationPage-wrapper__content .meditation_additionalInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .meditationPage-wrapper .meditationPage-wrapper__content .meditation_additionalInfo .hiddenMeditationMore {
+    display: block;
+    padding: 20px;
+  }
+  .meditationPage-wrapper .meditationPage-wrapper__content .meditation_additionalInfo .meditation_additionalnfo__iconsBlock {
+    margin: 0;
+    display: none;
+  }
+  .meditationPage-wrapper .meditationPage-wrapper__content .meditation_additionalInfo .meditation_additionalInfo__text {
+    display: none;
+  }
+  .meditationPage-wrapper .meditationPage-wrapper__content .meditation_additionalInfo .meditation_additionalInfo__text .additionalInfo_content {
+    text-align: justify;
+  }
+  .meditation_additionalInfo .meditation_additionalnfo__iconsBlock {
+    visibility: collapse;
+  }
+  .meditation_additionalInfo .additionalInfo_content {
+    display: none;
+  }
+}

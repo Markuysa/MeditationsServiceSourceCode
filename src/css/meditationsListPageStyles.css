@@ -1,0 +1,41 @@
+.meditations_page-wrapper {
+  background-color: #f7f3f3;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.meditations_page__content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto/1fr;
+  gap: 10px;
+  margin-top: 30px;
+}
+.meditations_page__content .meditations_page__content_asideBar {
+  grid-column: 1/2;
+}
+.meditations_page__content .meditations_page__content_list {
+  grid-column: 2/3;
+}
+
+@media screen and (max-width: 625px) {
+  .meditations_page__content {
+    grid-template-rows: auto/1fr;
+    grid-template-columns: 1fr;
+  }
+  .meditations_page__content .meditations_page__content_asideBar {
+    grid-row: 1/2;
+    grid-column: span 2;
+    display: none;
+  }
+  .meditations_page__content .meditations_page__content_asideBar .asideBarItems {
+    width: 100%;
+    height: 50px;
+  }
+  .meditations_page__content .meditations_page__content_list {
+    grid-row: 2/3;
+  }
+}

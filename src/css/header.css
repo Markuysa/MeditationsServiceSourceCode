@@ -1,0 +1,185 @@
+@import url("../css/resetFile.css");
+@import url("../css/fonts.css");
+html {
+  box-sizing: border-box;
+}
+
+.header__navigation__list_hidden {
+  position: absolute;
+  width: 100%;
+  background-color: red;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  z-index: 100000000000;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  text-align: center;
+  transform: translateY(-100%);
+  transition: 1s;
+  padding-left: 0px;
+}
+.header__navigation__list_hidden li {
+  padding: 10px;
+  font-family: "Chronicle Display Semibold";
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: "Gilroy Light";
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 5px;
+  font-size: 14px;
+  line-height: 21px;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: black;
+  width: 100%;
+}
+.header__navigation__list_hidden li:hover {
+  background-color: rgb(175, 159, 159);
+  transition: 0.8s;
+}
+
+.header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-around;
+  top: 44px;
+  align-items: center;
+}
+.header .header_options_list .options_list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.header .header_options_list .options_list a {
+  color: black;
+}
+.header .header_options_list .options_list li {
+  margin: 0 50px 0;
+  font-family: "Gilroy Bold", "Consolas";
+}
+.header .header_options_list .options_list li:hover {
+  transform: scale(1.1);
+  transition: 0.6s;
+}
+.header .header_account_drop .header_account {
+  font-family: "Gilroy Bold";
+  color: rgb(0, 0, 0);
+  display: block;
+}
+.header .header_account_drop .header_account .icon {
+  background-image: url("../img/icons/icons8-user-20.png");
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 25px; /* Or size of icon + spacing */
+}
+.header .header_account__dropdownMenu {
+  visibility: collapse;
+  opacity: 0;
+  position: absolute;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background: rgba(36, 36, 36, 0.311);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  right: 10px;
+  z-index: 1000;
+  color: white;
+  border-radius: 5px;
+  transition: 0.4s;
+  font-family: "Gilroy Light";
+  text-align: center;
+  margin-top: 10px;
+}
+.header .header_account__dropdownMenu ul {
+  padding-left: 0;
+}
+.header .header_account__dropdownMenu ul a {
+  color: white;
+}
+.header .header_account__dropdownMenu p {
+  padding: 10px;
+  margin-top: 5px;
+}
+.header .header_account__dropdownMenu li {
+  padding: 10px;
+}
+.header .header_account__dropdownMenu li:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+.header .header_logo {
+  font-family: "Chronicle Display Semibold", "Times New Roman";
+  font-size: 30px;
+}
+
+.burger__icon {
+  visibility: hidden;
+}
+
+.mainHeaderBurger {
+  display: none;
+}
+
+.hiddenLogotype {
+  display: none;
+  font-family: "Chronicle Display Semibold", "Times New Roman";
+  font-size: 30px;
+}
+
+.element::-webkit-scrollbar {
+  width: 0;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+.header .header_account_drop {
+  cursor: pointer;
+}
+.header .header_account_drop .header_account__dropdownMenu.active {
+  visibility: visible;
+  opacity: 1;
+  transition: 1s;
+}
+
+@media screen and (max-width: 810px) {
+  .header_logo {
+    display: none;
+  }
+  .mainHeaderBurger {
+    display: block;
+  }
+  .hiddenLogotype {
+    display: block;
+    transform: translate(-10px, 10px);
+    visibility: visible;
+    width: 50px;
+    height: 50px;
+  }
+  .header_options_list {
+    display: none;
+  }
+  .firstPage__title .firstPage_title_descriprion h1 {
+    font-size: 45px;
+  }
+  .firstPage__title .firstPage_title__header span {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 811px) {
+  .header__navigation__list_hidden {
+    display: none;
+  }
+}
