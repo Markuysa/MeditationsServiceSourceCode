@@ -1,4 +1,4 @@
-
+import React, { Component }  from 'react';
 const PageLeftAlign= ({page})=>{
     return (
         <div className="page-wrapper">

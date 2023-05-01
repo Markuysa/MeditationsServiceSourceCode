@@ -1,6 +1,7 @@
 import "../css/404PageStyles.css"
 import HeaderSecondary from "../components/headers/headerSecondary";
 import Button from "../UI/Blackbutton/BlackButton";
+import React, { Component }  from 'react';
 const ErrorPage = ()=>{
     let adaptiveValue = 800
     return(

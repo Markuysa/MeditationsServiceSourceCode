@@ -15,7 +15,6 @@ export const useSortedMeditations = (meditations,selectedSort)=>{
 }
 
 export const useSortedAndSearchMeditations = (meditations,selectedSort,searchQuery,selectedFilter)=>{
-
     const sortedMeditations=useSortedMeditations(meditations,selectedSort);
     const sortedFilteredMeditations = useFiltered(sortedMeditations,selectedFilter);
     const sortedAndSearchedMeditations = useMemo(()=>{
@@ -28,7 +27,7 @@ export const useSortedAndSearchMeditations = (meditations,selectedSort,searchQue
 export const useFiltered = (meditations,selectedFilter)=>{
     const sortedFilteredMeditations= useMemo(()=>{
         if (selectedFilter){
-            return [...meditations].filter(meditation => meditation.categories.indexOf(selectedFilter.toLowerCase())!= -1)
+            return [...meditations].filter(meditation => meditation.categories == selectedFilter)
         }
         return meditations;
     },[selectedFilter,meditations]);

@@ -1,10 +1,12 @@
 import { Component, useEffect } from 'react';
+import React from 'react';
 import '../../css/header.css'
 import BurgerButton from '../../UI/BurgerButton/burgerButton';
 import Logotype from '../../UI/Logotype/Logotype';
 const HeaderMain = () => {
     let accountMenu;
     let accountIcon;
+    const username = localStorage.getItem('username')
     useEffect(() => {
         let burgerButton = document.querySelector('.mainHeaderBurger')    
         let menu = document.querySelector('.header__navigation__list_hidden')
@@ -65,12 +67,18 @@ const HeaderMain = () => {
                     <div className="header_account">
                         <span className="icon" onClick={openAccMenu}>Account</span>
                     <div className="header_account__dropdownMenu">
-                        <div><p>Signed in as <a href="" className='userName'>Markuysa</a></p></div>
+                        {username && <div><p>Signed in as <a href={'/profile/'+localStorage.getItem('id')} className='userName'>{username}</a></p></div>}
                         <ul>
-                            <a href="/errorPage"><li>Your profile</li></a>
-                            <a href="/errorPage"><li>Your meditations</li></a>
+                        {username && <a href={'/profile/'+localStorage.getItem('id')}><li>Your profile</li></a>}
+                        {username && <a href="/errorPage"><li>Your meditations</li></a>}
                             <a href="/errorPage"><li>Upgrade Pro</li></a>
-                            <a href="/errorPage"><li>Sign out</li></a>
+                            {username &&    <a href="/login" onClick={()=>{
+                                localStorage.removeItem('jwt')
+                                localStorage.removeItem('id')
+                                localStorage.removeItem('username')
+                            }}><li>Sign out</li></a>
+                        }
+                        { !username && <a href="/login"><li>Sign in</li></a>}
                         </ul>
                     </div>
                     </div>

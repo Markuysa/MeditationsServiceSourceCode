@@ -1,4 +1,4 @@
-
+import React, { Component }  from 'react';
 import Page from "./page";
 import "../../css/secondaryPagesStyle.css"
 

@@ -1,13 +1,58 @@
+
 import { useEffect } from "react";
 import HeaderSecondary from "../components/headers/headerSecondary";
 import MeditationPageSlider from "../components/meditationComponents/meditationPageSlider";
+import { useParams } from "react-router-dom";
+import { useState } from 'react';
 import Footer from "../components/pageTemplates/footer";
 import ModalVideo from "../components/pageTemplates/modalVideo";
-
+import React, { Component }  from 'react';
 import "../css/meditationPageStyles.css"
 import Button from "../UI/Blackbutton/BlackButton";
 import WhiteButton from "../UI/whiteButton/WhiteButton";
     const MeditationPage = ()=>{
+        let { id } = useParams();
+        const [comment, setComment] = useState(null);
+        const [comments, setComments] = useState([]);
+
+        const handleCommentChange = (event) => {
+          setComment(event.target.value);
+        }
+        
+        const handleSubmitComment = async () => {
+            var user_id = localStorage.getItem('id')
+
+            const commentData = {
+                userId: Number(user_id),
+                meditationId: Number(id),
+                body: comment,
+                createdAt: new Date(),
+              };
+            console.log(JSON.stringify(commentData))
+          const response = await fetch(`http://localhost:8080/api/meditations/${id}/comments`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${localStorage.getItem('jwt')}`
+            },
+            body: JSON.stringify(commentData)
+          });
+          const newComment = await response.json();
+          setComments([...comments, newComment]);
+          setComment('');
+        }
+        useEffect(() => {
+            const fetchComments = async () => {
+              const response = await fetch(`http://localhost:8080/api/meditations/${id}/comments`, {
+                headers: {
+                  'Authorization': `Bearer ${localStorage.getItem('jwt')}`
+                }
+              });
+              const comments = await response.json();
+              setComments(comments);
+            }
+            fetchComments();
+          }, [id]);
         let modalReadMore
         useEffect(()=>{
             modalReadMore = document.querySelector(".meditation_additionalInfo_modalWindow")
@@ -21,7 +66,51 @@ import WhiteButton from "../UI/whiteButton/WhiteButton";
 
             modalReadMore.style.visibility ="collapse";
             modalReadMore.style.opacity ="0";
+        }
+        const [meditation, setMeditation] = useState(null);
+        const [myString, setMyString] = useState("");
+        const [myVideo, setMyVideo] = useState("");
+        var index = 0
+        var categories = ""
+        useEffect(() => {
+            fetch(`http://localhost:8080/api/meditations/${id}`)
+            .then(response => response.json())
+            .then(data => {
+                setMeditation(data);
+                data.categories.forEach((element)=>{
+                    if (data.categories.length == index){
+                        return
+                    }else{
+                        categories += "to " + element.name + " "
+                    }
+                    index += 1
+                })
+                if (data.categories.length == 0){
+                    categories = "no categories"
+                }
+                setMyString(categories)
+                setMyVideo(data.video)
+            })
+            .catch(error => console.log(error))
+        }, [id]);
 
+        if (meditation === null) {
+            return <div style={{fontSize: 64 +"px"}}>Loading...</div>;
+        }
+        function getUsername(id){
+            fetch(`http://localhost:8080/user/${id}`)
+            .then(response => {
+              if (!response.ok) {
+                throw new Error('Failed to fetch user');
+              }
+              return response.json();
+            })
+            .then(data => {
+              return data.username
+            })
+            .catch(error => {
+              return ""
+            });
         }
         return(
             // <MeditationPageSlider />
@@ -31,7 +120,7 @@ import WhiteButton from "../UI/whiteButton/WhiteButton";
                     <div className="content__meditation_block">
                         <div className="meditation_block__imageSwiper">
                             
-                            <img src="https://all-mongolia.ru/wp-content/uploads/a/a/7/aa7b09b14283d07d71816651385652cb.jpeg" alt="" />
+                            <img src={meditation.image} alt="" />
 
                         </div>
                         <div className="meditation_block__textContent">
@@ -39,16 +128,16 @@ import WhiteButton from "../UI/whiteButton/WhiteButton";
                             <div className="textContent__title">
                                 <h1>MEDITATIONS AFTER STRESS</h1>
                                 <div className="textContent__categories">
-                                    <h2>Category: to relax </h2>
+                                    <h2>Category: {myString}</h2>
                                 </div>
                             </div>  
                             <div className="textContent__description">
-                                <p>Your body begins to relax gradually. You feel the tension in your muscles disappear. With each spoken word, every muscle of the body is filled with a feeling of peace and pleasant lethargy. Your breathing is even, calm. Air freely fills the lungs and easily leaves them. The heart beats clearly, rhythmically. Turn your inner gaze to the fingers of your right hand. The coccyx of the fingers of the right hand seems to touch the surface of warm water. You can feel the pulsation in your fingertips. There is a feeling that the hand is gradually immersed in warm water. This magic water washes your right hand, relaxes it and rises up your arm... Up to the elbow... Even higher... Now your whole hand is immersed in a pleasant warmth, relaxes... Fresh, renewed blood runs through the veins
+                                <p>{meditation.description + meditation.description}
                                 </p>
                             </div>
                             <div className="textContent__buttons">
                                 {/* <WhiteButton>Start</WhiteButton> */}
-                                <ModalVideo />
+                                <ModalVideo video={myVideo}/>
                                 <WhiteButton>Add to favorite</WhiteButton>
                             </div>
                         </div>
@@ -113,10 +202,30 @@ import WhiteButton from "../UI/whiteButton/WhiteButton";
                             </div>
                         </div>
                     </div>
-                    {/* <div className="meditatoin_otherProducts">
-                        
-
-                    </div> */}
+                    <div className="commentsTitle">
+                         <h1 className="commentTitle">Comments</h1>
+                    </div>
+                    {comments.map(comment => 
+                        <div key={comment.id} onClick={() => window.location.href = `/profile/${comment.userID}`}  className="deck-wrap">
+                            <div class="deck">
+                                <div class="card">
+                                    <div class="cardHeader">
+                                        <p>Anonymous</p>
+                                    </div>
+                                    <div class="cardBody">
+                                        <p>{comment.body}</p>
+                                    </div>
+                                    <div class="cardFooter">{comment.createdAt}</div>        
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                    <div className="inputArea">
+                         <textarea value={comment} onChange={handleCommentChange} className="inputField"/>
+                        <button disabled={
+                            localStorage.getItem("id") == undefined
+                        } onClick={handleSubmitComment} className="commentButton">Send</button>
+                    </div>
                     <div className="footer">
                         <Footer />
                     </div>

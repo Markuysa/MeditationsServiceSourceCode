@@ -1,9 +1,10 @@
 import '../css/login_page.css'
-import Button from '../UI/Blackbutton/BlackButton';
+import BlackButton from '../UI/Blackbutton/BlackButton';
 import InputField from '../UI/InputField/InputFiels';
 import InputFieldForm from '../UI/InputFieldForm/InputFieldForm';
 import Logotype from '../UI/Logotype/Logotype';
 import TransparentButton from '../UI/transparentButton/TransparentButton';
+import React, { Component }  from 'react';
 const Login = () =>{
 
     return(
@@ -17,13 +18,13 @@ const Login = () =>{
                 <form action="post" className="form">
                     <div className="form__inputFields">
                         <section>
-                            <label htmlFor="email">Email</label> 
-                            <InputFieldForm type="text" name='email' placeholder="Email"/>
+                            <label htmlFor="text">Username</label> 
+                            <InputFieldForm type="text" name='username' placeholder="Username"/>
                         </section>
                         <br />
                         <section>
                             <label htmlFor="password">Password</label> 
-                            <InputFieldForm type="password" name='Password' placeholder="Password"/>
+                            <InputFieldForm type="password" name='password' placeholder="Password"/>
                         </section>
                     </div>
                     <div className="form__additionalFeatures">
@@ -31,7 +32,7 @@ const Login = () =>{
                         <a href="#"><span>Forgot password</span></a>
                     </div>
                     <div className="form__buttonsBlock">
-                        <Button>Sign in</Button>
+                        <BlackButton>Sign in</BlackButton>
                         <p>or</p>
                         <TransparentButton>Sign in with Google</TransparentButton>
                     </div>

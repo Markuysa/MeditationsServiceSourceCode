@@ -1,4 +1,4 @@
-
+import React, { Component }  from 'react';
 import '../../css/secondaryPages.css'
 import PageLeftAlign from './pageLeftAlign';
 import PageRightAlign from './pageRIghtAlign';

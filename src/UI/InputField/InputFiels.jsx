@@ -1,5 +1,5 @@
 import classes from './InputStyles.module.css'
-
+import React, { Component }  from 'react';
 const InputField= (props) => {
     
     return (

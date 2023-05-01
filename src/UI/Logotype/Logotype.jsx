@@ -1,5 +1,5 @@
 import classes from "./LogotypeStyles.module.css"
-
+import React, { Component }  from 'react';
 const Logotype = ()=>{
 
     return (

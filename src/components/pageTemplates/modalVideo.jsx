@@ -3,7 +3,7 @@ import { IoCloseOutline } from "react-icons/io5";
 import { BiLoaderAlt } from "react-icons/bi";
 import "../../css/modalVideoStyles.css"
 import WhiteButton from "../../UI/whiteButton/WhiteButton";
-const ModalVideo = ({props})=>{
+const ModalVideo = (props)=>{
 
 
     useEffect(() => {
@@ -35,13 +35,13 @@ const ModalVideo = ({props})=>{
                                 className="modal__video-style"
                                 loading="lazy"
                                 
-                                height="500px"
+                                height="500px"  
                                 
-                                src="https://www.youtube.com/embed/kndqIj8Qgok"
+                                src={props.video}
                                 title="YouTube video player"
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen
+                                allowFullScreen
                               ></iframe>
                         </div>
                     </div>

@@ -1,4 +1,5 @@
 import Footer from "../components/pageTemplates/footer";
+import React, { Component }  from 'react';
 import HeaderMain from "../components/headers/header";
 import '../css/main_page.css'
 import SecondMainPage from "../components/pageTemplates/second_mainPage";

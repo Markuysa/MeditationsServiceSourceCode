@@ -1,6 +1,7 @@
 
 import { Collapse } from "bootstrap";
 import { event } from "jquery";
+import React  from 'react';
 import { useEffect } from "react";
 import "../../css/headerSecondary.css"
 import BurgerButton from "../../UI/BurgerButton/burgerButton";
@@ -13,12 +14,14 @@ import MeditationsList from "../meditationComponents/meditationsList";
 const HeaderSecondary = ()=>{
     let accountMenu;
     let accountIcon;
+    const username = localStorage.getItem('username')
     useEffect(() => {
         let burgerButton = document.querySelector('.secondaryBurger')    
         let menu = document.querySelector('.header-secondary__navigation__list_hidden')
         const onBurgerClick = ()=>{
             menu.style.transform="translateY(0)"
         }
+    
         let close_button = document.querySelector('.close_button')
         const onCloseClick = ()=>{
             menu.style.transform="translateY(-100%)"
@@ -70,7 +73,7 @@ const HeaderSecondary = ()=>{
                     <div className="header-secondary__account">
                         <span className="icon" onClick={openAccMenu}>Account </span>
                         <div className="header-secondary_account__dropdownMenu">
-                            <div><p>Signed in as <a href="">Markuysa</a></p></div>
+                        {username && <div><p>Signed in as <a href="">{username}</a></p></div>}
                             <ul>
                                 <a href="/errorPage"><li>Upgrade Pro</li></a>
                                 <a href="/login"><li>Sign in</li></a>

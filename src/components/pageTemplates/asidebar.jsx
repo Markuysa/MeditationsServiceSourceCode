@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "../../css/asideBar.css"
-
+import React, { Component }  from 'react';
 const AsideBar = ({items})=>{
     let listItem
     useEffect(()=>{

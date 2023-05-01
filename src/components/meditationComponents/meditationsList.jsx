@@ -6,22 +6,15 @@ import { useSortedAndSearchMeditations } from '../../hooks/useMeditations.js';
 import InputField from '../../UI/InputField/InputFiels';   
 import axios from 'axios'
 import { useEffect } from 'react';
-const MeditationsList= ({meditations, onMeditationsChange})=>{
-
-    // async function fetchMeditations(){
-    //     //const meditationsList = await axios.get('https://jsonplaceholder.typicode.com/photos') for external downloadin
-    //     // Here could be implemented a downloading information from the back server (coming soon...)
-    //     setTimeout(() => {
-            
-    //         onMeditationsChange(meditations);
-    //     }, 1000);
-    // }
-
-    // useEffect( ()=>{
-    //     fetchMeditations();
-    //     console.log("fetch")
-    // },[])
-
+import { typeImplementation } from '@testing-library/user-event/dist/type/typeImplementation';
+import { redirect } from 'react-router-dom';
+import React, { Component }  from 'react';
+const MeditationsList= (setSelectedMeditation)=>{
+    async function fetchPosts() {
+        const responce = await axios.get("http://localhost:8080/api/meditations/all")
+        setMeditationsList(responce.data)
+    }
+    const [meditationsList,setMeditationsList] = useState('')
     const [searchQuery, setSearchQuery]= useState('')
     const [selectedSort,setSelectedSort]=useState('')
     const [selectedFilter,setSelectedFilter]=useState('')
@@ -34,15 +27,36 @@ const MeditationsList= ({meditations, onMeditationsChange})=>{
         {name:"To study",value: "study"},
         {name:"To relax",value: "relax"}
     ]);
-
+    //const sortedAndSearchedMeditationsFilter = useSortedAndSearchMeditations(meditationsList,selectedSort,searchQuery,selectedFilter)
     const sortMeditations = (sort) =>{
         setSelectedSort(sort)
-        
+        alert(selectedSort)
     }
     const fitlerMeditations = (filter)=>{
         setSelectedFilter(filter)
+        alert(selectedFilter)
     }
-    const sortedAndSearchedMeditationsFilter = useSortedAndSearchMeditations(meditations,selectedSort,searchQuery,selectedFilter);
+    useEffect(()=>{
+        fetchPosts()
+    },[])
+
+
+    useEffect(()=>{
+        
+        let listMditationsHTML = document.querySelector(".meditationsList")
+
+        listMditationsHTML.addEventListener('click',(event)=>{
+            let target = event.target.closest("li")
+            if (!target) return;
+
+            if (!listMditationsHTML.contains(target)) return
+            let id = target.querySelector('.meditationID')
+            
+            //setSelectedMeditation(meditationsList[Number(id.innerText)])
+
+        })
+    },[])
+
     return (
         <div className="meditations_list_cards">
             <div className="search_fields">
@@ -73,15 +87,17 @@ const MeditationsList= ({meditations, onMeditationsChange})=>{
                 </div>
             </div>
             <div className="meditations_content">
-                {sortedAndSearchedMeditationsFilter.length
-                    ?sortedAndSearchedMeditationsFilter.map( (meditation)=>
-                        <Meditation 
-                            meditation = {meditation} 
-                            key={meditation.id} 
-                        />
-                    )           
-                    : <div className="notFoundPage"><p>No results</p></div>
-                }
+                <ul className='meditationsList'>
+                    {meditationsList.length
+                        ?meditationsList.map( (meditation)=>
+                            <Meditation 
+                                meditation = {meditation} 
+                                key={meditation.id} 
+                            />
+                        )           
+                        : <div className="notFoundPage"><p>No results</p></div>
+                    }
+                </ul>
             </div>
         </div>
 

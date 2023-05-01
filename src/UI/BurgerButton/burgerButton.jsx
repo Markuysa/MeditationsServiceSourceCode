@@ -1,4 +1,4 @@
-
+import React, { Component }  from 'react';
 import classes from "./burgerButtonStyles.module.css"
 
 const BurgerButton = ()=>{

@@ -4,8 +4,9 @@ import MeditationsList from "../components/meditationComponents/meditationsList"
 import AsideBar from "../components/pageTemplates/asidebar";
 import Footer from "../components/pageTemplates/footer";
 import "../css/meditationsListPageStyles.css"
-
-const MeditationsPage = ({meditations})=>{
+import React, { Component }  from 'react';
+const MeditationsPage = (setSelectedMeditation)=>{
+    console.log(setSelectedMeditation)
     const asideItems=([
         {title:"To relax"},{title:"To sleep"},{title:"To study"}
     ]);
@@ -18,7 +19,7 @@ const MeditationsPage = ({meditations})=>{
                     {/* <MeditationsList meditations={meditations}/> */}
                 </div>
                 <div className="meditations_page__content_list">
-                    <MeditationsList meditations={meditations}/>
+                    <MeditationsList setSelectedMeditation = {setSelectedMeditation}/>
                 </div>
             </div>    
             <Footer />            

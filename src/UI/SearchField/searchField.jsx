@@ -1,5 +1,5 @@
 import classes from "./searchFieldStyles.module.css"
-
+import React  from 'react';
 const SearchField = ()=>{
     return (
         <div className={classes.search_input__wrapper}>
